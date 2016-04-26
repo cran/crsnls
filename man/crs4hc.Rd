@@ -15,15 +15,15 @@ crs4hc(formula, data, a, b, N, my_eps, max_evals, delta, w0)
 
 \item{b}{(obligatory) a vector of length equal to number of parameters representing upper bounds of search space (bounds for parameters must be specified in the same order they appear on right-hand side of \code{formula})}
 
-\item{N}{(optional) size of population}
+\item{N}{(optional) size of population. Default value is \code{10*length(a)}.}
 
-\item{my_eps}{(optional) is used for stopping condition}
+\item{my_eps}{(optional) is used for stopping condition. Default value is 1e-15.}
 
-\item{max_evals}{(optional) is used for stopping condition, specifies maximum number of objective function evaluations per dimension (dimension=nonlinear model parameter)}
+\item{max_evals}{(optional) is used for stopping condition, specifies maximum number of objective function evaluations per dimension (dimension=nonlinear model parameter). Default value is 40000.}
 
-\item{delta}{(optional) controls the competition of local heuristics}
+\item{delta}{(optional) controls the competition of local heuristics. Default value is 0.05. delta > 0.}
 
-\item{w0}{(optional) controls the competition of local heuristics}
+\item{w0}{(optional) controls the competition of local heuristics. Default value is 0.5. w0 > 0.}
 }
 \value{
 An S3 object of class \code{crs4hc}. This object is a list of:
@@ -34,7 +34,7 @@ An S3 object of class \code{crs4hc}. This object is a list of:
 }
 \description{
 This function estimates the regression coefficients of a nonlinear regression function using least squares.
-The minimization is performed by the CRS algorithm with four competing local heuristics. Algorithm is described in Tvrdík, Křivý and Mišík (2007).
+The minimization is performed by the CRS algorithm with four competing local heuristics. Algorithm is described in Tvrdík et al. (2007).
 }
 \details{
 There are implemented methods for generic functions \link{print}, \link{summary}, \link{plot}.
